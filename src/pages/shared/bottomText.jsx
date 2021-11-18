@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const BottomText = (props) => {
-  const { text } = props;
+  const navigate = useNavigate();
+  const { text, link } = props;
 
-  return(
-    <Text>{text}</Text>
+  return (
+    <Text onClick={() => navigate(link)}>{text}</Text>
   );
 };
 

@@ -5,6 +5,7 @@ import BottomText from '../shared/bottomText';
 import Button from '../shared/button';
 
 const FrontPage = () => {
+  
   return (
     <>
       <Page>
@@ -14,8 +15,8 @@ const FrontPage = () => {
         </TextDiv>
       </Page>
       <BottomContainer>
-        <Button text='Quero começar' />
-        <BottomText text='Já sou grato' />
+        <Button link='/sign-up' text='Quero começar' />
+        <BottomText link='/sign-in' text='Já sou grato' />
       </BottomContainer>
     </>
   );
