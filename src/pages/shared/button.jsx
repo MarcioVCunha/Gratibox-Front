@@ -24,16 +24,20 @@ const Button = (props) => {
           const promisse = await postSignIn(userInfo);
           localStorage.setItem('token', promisse.data);
           alert('Login realizado.');
-          navigate('/home-page');
+          navigate('/homepage');
+          return;
         } catch (error) {
           if (error.response.status === 404) {
             alert('Email ou senha incorretos.');
+            return;
           } else {
             alert('Estamos com um problema interno no servidor, contate o suporte');
+            return;
           }
         }
       } else {
         alert('Favor preencher os campos corretamente');
+        return;
       }
     }
 
@@ -62,8 +66,11 @@ const Button = (props) => {
           Parece que algo deu errado, preencha os campos corretamente.
           Cada campo deve ter pelo menos 3 caracteres.
         `);
+        return;
       }
     }
+
+    navigate(link);
   };
 
   return (
