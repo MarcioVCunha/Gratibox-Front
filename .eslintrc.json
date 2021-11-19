@@ -45,6 +45,6 @@
             }
         ],
         "no-unused-vars": "off",
-        "react/forbif-prop-types": "off"
+        "react/prop-types": "off"
     }
 }
