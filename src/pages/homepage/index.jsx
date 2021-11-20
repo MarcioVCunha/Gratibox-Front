@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import UserContext from '../../context/userContext';
 import createConfing from '../../services/service.create-config';
@@ -11,17 +12,23 @@ const Homepage = () => {
   const { name, setName } = useContext(UserContext);
   const [isTherePlan, setIsTherePlan] = useState(false);
   const [plan, setPlan] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const config = createConfing();
     const promisse = getUserInfo(config);
-    promisse.then((res) => {
-      setName(res.data.name);
-      setIsTherePlan(res.data.plan !== undefined ? true : false);
-      if (isTherePlan) {
-        setPlan(res.data.plan);
-      }
-    });
+    promisse
+      .then((res) => {
+        setName(res.data.name);
+        setIsTherePlan(res.data.plan !== undefined ? true : false);
+        if (isTherePlan) {
+          setPlan(res.data.plan);
+        }
+      })
+      .catch((error) => {
+        alert('Seu token expirou, favor logar novamente');
+        navigate('/');
+      });
   }, []);
 
   return (

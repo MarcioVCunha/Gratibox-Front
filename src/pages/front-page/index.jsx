@@ -5,7 +5,6 @@ import BottomText from '../shared/bottomText';
 import Button from '../shared/button';
 
 const FrontPage = () => {
-  
   return (
     <>
       <Page>

@@ -31,6 +31,7 @@ const Button = (props) => {
             alert('Email ou senha incorretos.');
             return;
           } else {
+            console.log(error);
             alert('Estamos com um problema interno no servidor, contate o suporte');
             return;
           }
@@ -87,6 +88,10 @@ const RoundButton = styled.button`
   color: white;
   font-size: 22px;
   font-weight: 700;
+
+  :active{
+    opacity: 0.5;
+  }
 `;
 
 export default Button;
