@@ -31,7 +31,6 @@ const Button = (props) => {
             alert('Email ou senha incorretos.');
             return;
           } else {
-            console.log(error);
             alert('Estamos com um problema interno no servidor, contate o suporte');
             return;
           }

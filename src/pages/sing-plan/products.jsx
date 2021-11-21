@@ -34,7 +34,7 @@ const Date = () => {
   return (
     <Container>
       <ClosedContainer isExpanded={isExpanded} >
-        <p>Entrega</p>
+        <p>Quero receber</p>
         <img src={DownArrow} onClick={() => expand()} />
       </ClosedContainer>
       <Options isExpanded={isExpanded}>

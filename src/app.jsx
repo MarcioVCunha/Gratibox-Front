@@ -19,6 +19,11 @@ const App = () => {
     },
     delivery: {
       date: 1,
+      state: 'Estado',
+      buyerName: '',
+      address: '',
+      zipCode: '',
+      city: ''
     }
   };
 

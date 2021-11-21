@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import Finalize from './pages/finalized/index.jsx';
 import FrontPage from './pages/front-page/index.jsx';
 import Homepage from './pages/homepage/index.jsx';
 import SignIn from './pages/sign-in/index.jsx';
@@ -13,6 +14,7 @@ const Pages = () => {
       <Route exact path='/sign-up' element={<SignUp />} />
       <Route exact path='/homepage' element={<Homepage />} />
       <Route exact path='/plans' element={<Plan />} />
+      <Route exact path='/plans/finalize' element={<Finalize />} />
     </Routes>
   );
 };

@@ -8,22 +8,29 @@ import { useNavigate } from 'react-router-dom';
 import Phrase from '../shared/phrase';
 import Content from './content';
 import Button from './button';
+import BuyContext from '../../context/buyContext';
 
-const Plan = () => {
+const Finalize = () => {
+  const { buyInfo } = useContext(BuyContext);
   const { name, setName } = useContext(UserContext);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const config = createConfig();
-    const promisse = getUserInfo(config);
-    promisse
-      .then((res) => {
-        setName(res.data.name);
-      })
-      .catch((error) => {
-        alert('Seu token expirou, favor logar novamente');
-        navigate('/');
-      });
+    if (buyInfo.product.tea || buyInfo.product.incense || buyInfo.product.organic) {
+      const config = createConfig();
+      const promisse = getUserInfo(config);
+      promisse
+        .then((res) => {
+          setName(res.data.name);
+        })
+        .catch((error) => {
+          alert('Seu token expirou, favor logar novamente');
+          navigate('/');
+        });
+    } else {
+      alert('Alguns dados foram perdidos, pedimos que preencha novamente');
+      navigate('/plans');
+    }
   }, []);
 
   return (
@@ -46,4 +53,4 @@ const Page = styled.main`
   padding: 5vh 0;
 `;
 
-export default Plan;
+export default Finalize;
