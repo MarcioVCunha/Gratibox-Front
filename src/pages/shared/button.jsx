@@ -87,6 +87,10 @@ const RoundButton = styled.button`
   color: white;
   font-size: 22px;
   font-weight: 700;
+
+  :active{
+    opacity: 0.5;
+  }
 `;
 
 export default Button;

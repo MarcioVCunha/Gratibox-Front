@@ -1,4 +1,4 @@
-const createConfing = () => {
+const createConfig = () => {
   const token = localStorage.getItem('token');
 
   return {
@@ -8,4 +8,4 @@ const createConfing = () => {
   };
 };
 
-export default createConfing;
+export default createConfig;
