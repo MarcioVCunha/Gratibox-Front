@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Button from '../shared/button';
+import PlanContent from './planContent';
 
 /* eslint-disable react/prop-types */
 const Content = (props) => {
@@ -20,7 +21,7 @@ const Content = (props) => {
 
   if (isTherePlan) {
     return (
-      <p>Teste</p>
+      <PlanContent />
     );
   }
 

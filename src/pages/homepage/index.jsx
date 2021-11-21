@@ -20,9 +20,9 @@ const Homepage = () => {
     promisse
       .then((res) => {
         setName(res.data.name);
-        setIsTherePlan(res.data.plan !== undefined ? true : false);
+        setIsTherePlan(res.data.userPlan !== undefined ? true : false);
         if (isTherePlan) {
-          setPlan(res.data.plan);
+          setPlan(res.data.userPlan);
         }
       })
       .catch((error) => {
