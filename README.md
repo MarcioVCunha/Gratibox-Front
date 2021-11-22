@@ -13,7 +13,9 @@ First, clone this repository to your machine.
 After you have done that, you only need a few more steps, here they are:
 
 1 - go to the .env.example.js and change the string to your port (it's the same one you used in the backend), save it in a .env.js archive.
+
 2 - run the "npm i" command to get all modules.
+
 3 - run the "npm start" command.
 
 And done, now our project is running in your machine.
