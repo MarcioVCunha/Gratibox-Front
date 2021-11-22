@@ -84,7 +84,7 @@ const PlanContent = () => {
           }
 
           const weekday = now.getDay();
-          let dayDiference;
+          let dayDiference = (7 * date);
           const lastDay = (new Date(year, month, 0)).getDate();
           let dayToShow;
           let monthToShow;
@@ -126,7 +126,7 @@ const PlanContent = () => {
           monthToShow = monthToShow > 12 ? monthToShow - 12 : monthToShow;
 
           return (
-            <p>{String(dayToShow).padStart(2, '0')}/{String(monthToShow).padStart(2, '0')}/{year}</p>
+            <p>{String(dayToShow).padStart(2, '0')}/{String(monthToShow).padStart(2, '0')}/{yearToShow}</p>
           );
         };
 
